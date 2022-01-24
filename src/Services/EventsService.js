@@ -5,7 +5,7 @@ const getAll = () => {
 };
 
 const get = id => {
-  return http.get(`/events/${id}`);
+  return http.get(`/event/${id}`);
 };
 
 const create = data => {

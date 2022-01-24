@@ -1,19 +1,19 @@
  import http from "../http-common";
 
 const getAll = () => {
-  return http.get("/eventdetails");
+  return http.get("/event");
 };
 
 const get = id => {
-  return http.get(`/eventdetails/${id}`);
+  return http.get(`/event/${id}`);
 };
 
 const create = data => {
-  return http.post("/eventdetails", data);
+  return http.post("/event", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/eventdetails/${id}`, data);
+  return http.put(`/event/${id}`, data);
 };
 
 const remove = id => {

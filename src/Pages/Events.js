@@ -69,7 +69,7 @@ else
                                     </div>
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
-                                        <h3><Link to="/eventdetails">{event.title}</Link></h3>
+                                        <h3><Link to={"/eventdetails/" + event.id}>{event.title}</Link></h3>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ else
                                     </div>
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
-                                        <h3><Link to="/eventdetails">{event.title}</Link></h3>
+                                        <h3><Link to={"/eventdetails/" + event.id}>{event.title}</Link></h3>
                                     </div>
                                 </div>
                             </div>

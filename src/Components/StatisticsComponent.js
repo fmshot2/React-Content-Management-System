@@ -33,9 +33,8 @@ if (loading) {
     }
 else
 
-       return (
-    
-
+       return (   
+            <div>
             <section className="ttm-row only-text-section ttm-bgcolor-skincolor ttm-bg ttm-bgimage-yes bg-img10 clearfix">
                 <div className="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
                 <div className="container">
@@ -65,7 +64,7 @@ else
                         </div>
                     </div>
                 </div>
-            
+            </section>
 
             
             <section className="ttm-row zero-padding-section position-relative z-1 clearfix">
@@ -89,9 +88,9 @@ else
                                         data-before-style     = "sup"
                                         data-after            = ""
                                         data-after-style      = "sub"
-                                    >statistic.value</span>
+                                    >{statistic.value}</span>
                                     </h4>
-                                    <h3 className="ttm-fid-title">statistic.title</h3>
+                                    <h3 className="ttm-fid-title">{statistic.title}</h3>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +98,7 @@ else
                 </div>
             </div>
         </section>
-    </section>
+        </div>
             
             
   );
