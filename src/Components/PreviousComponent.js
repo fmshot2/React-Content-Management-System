@@ -1,6 +1,38 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
+import { Link, } from 'react-router-dom';
+
+
+import PreviousDataService from "../Services/PreviousCompService";
 
 function PreviousComponent() {
+
+    const [loading, setLoading] = useState(true);
+    const [previous, setPrevious] = useState([]);
+
+    
+
+    useEffect(() => {
+    retrievePrevious();
+  }, []);
+
+    const retrievePrevious = () => {
+    PreviousDataService.getAll()
+      .then(response => {
+       console.log("tutossssr", response);
+        setPrevious(response.data.previous);
+
+        setLoading(false);
+        console.log("about", response.data.previous);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+if (loading) {
+        return <h4>Loading PreviousEvents...</h4>
+    }
+else
+
     return (
     
             <div className="ttm-row zero-padding-section clearfix">

@@ -29,7 +29,7 @@ function StatisticsComponent() {
       });
   };
 if (loading) {
-        return <h4>Loading Services...</h4>
+        return <h4>Loading Statistics...</h4>
     }
 else
 

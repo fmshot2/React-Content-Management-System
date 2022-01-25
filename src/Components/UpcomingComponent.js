@@ -1,6 +1,38 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
+import { Link, } from 'react-router-dom';
 
-function UpComingComponent() {
+
+import UpcomingDataService from "../Services/UpcomingCompService";
+
+function UpcomingComponent() {
+
+    const [loading, setLoading] = useState(true);
+    const [upcoming, setUpcoming] = useState([]);
+
+    
+
+    useEffect(() => {
+    retrieveUpcoming();
+  }, []);
+
+    const retrieveUpcoming = () => {
+    UpcomingDataService.getAll()
+      .then(response => {
+       console.log("tutossssr", response);
+        setUpcoming(response.data.upcoming);
+
+        setLoading(false);
+        console.log("about", response.data.upcoming);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
+if (loading) {
+        return <h4>Loading UpcomingEvents...</h4>
+    }
+else
+
     return (
 
 // <!-- events-section -->
@@ -78,4 +110,4 @@ function UpComingComponent() {
 );
 }
 
-export default UpComingComponent
+export default UpcomingComponent
