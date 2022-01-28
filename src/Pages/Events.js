@@ -1,39 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
-import EventDataService from "../Services/EventsService";
+import PreviousEventService from "../Services/PreviousEventsService";
+import UpcomingEventService from "../Services/UpcomingEventsService";
+
+
 
 
 function Events() {
     const [loading, setLoading] = useState(true);
     const [previousevents, setPreviousEvents] = useState([]);
-    const [events, setEvents] = useState([]);
+    const [upcomingevents, setUpcomingEvents] = useState([]);
+    const [length, setLength] = useState(false)
 
     useEffect(() => {
-        retrieveEvent();
-        filterEvent();
+        retrieveUpcomingEvent();
+        retrievePreviousEvent();
+        // filterEvent();
     }, []);
 
-    const retrieveEvent = () => {
-    EventDataService.getAll()
+    const retrieveUpcomingEvent = () => {
+        UpcomingEventService.getAll()
       .then(response => {
        console.log("events", response);
         // var date = new Date(Date.parse(DATE));
-
-        setEvents(response.data.event) 
+        response.data.length > 0 && setLength(true);
+        setUpcomingEvents(response.data) 
         // setEvents
         setLoading(false);
-        console.log("events2", events);
       })
       .catch(e => {
         console.log(e);
       });
   };
 
-  const filterEvent = () => {
-      setEvents(events.filter((event) => event.date < Date.now()))
-
-  }
-
+  const retrievePreviousEvent = () => {
+    PreviousEventService.getAll()
+      .then(response => {
+       console.log("PreviousEventDataService", response);
+        // var date = new Date(Date.parse(DATE));
+        // response.data.length > 0 && setLength(true);
+        setPreviousEvents(response.data) 
+        // setEvents
+        setLoading(false);
+        // console.log("events2", events);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
 if (loading) {
         return <h4>Loading Events...</h4>
@@ -47,8 +61,9 @@ else
                 <div className="container">
                     {/* <!-- row --> */}
                     <h2 className="text-center">UPCOMING EVENTS</h2>
+                    <p className="text-center text-small m-5">{length ? '' : 'Hold On. No Upcoming Events yet...'}</p>
                     <div className="row">
-                        {events.map((event) => (
+                        {upcomingevents.map((upcomingevent) => (
 
                         <div className="col-md-6 col-lg-3 col-sm-6">
                             {/* <!-- featured-imagebox-blog --> */}
@@ -64,12 +79,12 @@ else
                                     {/* <!-- featured-content --> */}
                                     <div className="post-meta">
                                         {/* <!-- post-meta --> */}
-                                        <span className="ttm-meta-line"><i className="fa fa-calendar"></i>{event.date}</span>
+                                        <span className="ttm-meta-line"><i className="fa fa-calendar"></i>{upcomingevent.date}</span>
                                         <span className="ttm-meta-line"><i className="fa fa-comments"></i>2,comments</span>
                                     </div>
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
-                                        <h3><Link to={"/eventdetails/" + event.id}>{event.title}</Link></h3>
+                                        <h3><Link to={"/eventdetails/" + upcomingevent.id}>{upcomingevent.title}</Link></h3>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +94,7 @@ else
                     </div>
                         <h2 className="text-center">PREVIOUS EVENTS</h2>
                     <div className="row">
-                    {events.map((event) => (
+                    {previousevents.map((previousevent) => (
 
                         <div className="col-md-6 col-lg-3 col-sm-6">
                             {/* <!-- featured-imagebox-blog --> */}
@@ -95,12 +110,12 @@ else
                                     {/* <!-- featured-content --> */}
                                     <div className="post-meta">
                                         {/* <!-- post-meta --> */}
-                                        <span className="ttm-meta-line"><i className="fa fa-calendar"></i>August 25, 2019</span>
+                                        <span className="ttm-meta-line"><i className="fa fa-calendar"></i>{previousevent.date}</span>
                                         <span className="ttm-meta-line"><i className="fa fa-comments"></i>2,comments</span>
                                     </div>
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
-                                        <h3><Link to={"/eventdetails/" + event.id}>{event.title}</Link></h3>
+                                        <h3><Link to={"/eventdetails/" + previousevent.id}>{previousevent.title}</Link></h3>
                                     </div>
                                 </div>
                             </div>
@@ -125,10 +140,8 @@ else
             </section>
             {/* <!-- blog-section --> */}
              
-        </div>
+        </div>      
 
-       
-
-    );
+    )
 }
 export default Events;

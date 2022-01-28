@@ -22,10 +22,10 @@ function About() {
     AboutDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setAbout(response.data.data);
+        setAbout(response.data);
 
         setLoading(false);
-        console.log("about", response.data.data);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

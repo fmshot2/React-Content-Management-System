@@ -29,7 +29,7 @@ useEffect(() => {
     EventDetailsDataService.get(id)
       .then(response => {
          console.log("eventD", response);
-        setCurrentEventDetails(response.data.event);
+        setCurrentEventDetails(response.data);
         console.log("eventD2", currenteventdetails);
       })
       .catch(e => {

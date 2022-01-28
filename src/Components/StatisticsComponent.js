@@ -19,10 +19,10 @@ function StatisticsComponent() {
     StatisticsDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setStatistics(response.data.statistic);
+        setStatistics(response.data);
 
         setLoading(false);
-        console.log("about", response.data.statistic);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

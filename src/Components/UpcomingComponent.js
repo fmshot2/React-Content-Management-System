@@ -2,7 +2,7 @@ import React,  { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
 
 
-import UpcomingDataService from "../Services/UpcomingCompService";
+import UpcomingDataService from "../Services/UpcomingEventsService";
 
 function UpcomingComponent() {
 
@@ -19,10 +19,10 @@ function UpcomingComponent() {
     UpcomingDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setUpcoming(response.data.upcoming);
+        setUpcoming(response.data);
 
         setLoading(false);
-        console.log("about", response.data.upcoming);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

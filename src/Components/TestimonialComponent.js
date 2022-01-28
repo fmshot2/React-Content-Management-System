@@ -15,12 +15,12 @@ function TestimonialComponent() {
         TestimonialDataService.getAll()
             .then(response => {
                 console.log("tutossssr", response);
-                setTestimonials(response.data.testimony.slice(-3));
+                setTestimonials(response.data.slice(-3));
                 // const lastTwo = cars.slice(-2);
 
 
                 setLoading(false);
-                console.log("about", response.data.testimony);
+                console.log("about", response.data);
             })
             .catch(e => {
                 console.log(e);

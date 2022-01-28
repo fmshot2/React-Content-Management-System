@@ -5,27 +5,27 @@ const getAll = () => {
 };
 
 const get = id => {
-  return http.get(`/about/${id}`);
+  return http.get(`/testimony/${id}`);
 };
 
 const create = data => {
-  return http.post("/testimonial", data);
+  return http.post("/testimony", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/testimonial/${id}`, data);
+  return http.put(`/testimony/${id}`, data);
 };
 
 const remove = id => {
-  return http.delete(`/testimonial/${id}`);
+  return http.delete(`/testimony/${id}`);
 };
 
 const removeAll = () => {
-  return http.delete(`/testimonial`);
+  return http.delete(`/testimony`);
 };
 
 const findByTitle = searchTitle => {
-  return http.get(`/testimonial/${searchTitle}`);
+  return http.get(`/testimony/${searchTitle}`);
 };
 
 

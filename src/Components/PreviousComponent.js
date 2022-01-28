@@ -2,7 +2,7 @@ import React,  { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
 
 
-import PreviousDataService from "../Services/PreviousCompService";
+import PreviousDataService from "../Services/PreviousEventsService";
 
 function PreviousComponent() {
 
@@ -19,10 +19,10 @@ function PreviousComponent() {
     PreviousDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setPrevious(response.data.previous);
+        setPrevious(response.data);
 
         setLoading(false);
-        console.log("about", response.data.previous);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);
@@ -36,7 +36,7 @@ else
     return (
     
             <div className="ttm-row zero-padding-section clearfix">
-                <div className="container">
+                <div className="container"> 
                     <div className="row">
                         <div className="col-md-12">
                             {/* <!-- ttm-col-bgcolor-yes --> */}
