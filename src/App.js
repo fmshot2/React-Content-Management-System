@@ -25,7 +25,7 @@ function App() {
     ConfigDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setConfig(response.data.system_config);
+        setConfig(response.data);
         console.log("about", response.data.system_config);
       })
       .catch(e => {

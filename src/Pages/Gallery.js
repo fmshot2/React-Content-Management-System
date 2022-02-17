@@ -3,7 +3,7 @@ import { Link, } from 'react-router-dom';
 
 function Gallery () {
     const [loading, setLoading] = useState(true);
-    const [students, setStudents] = useState([]);
+    const [gallery, setGallery] = useState([]);
 
     useEffect(() => {
 

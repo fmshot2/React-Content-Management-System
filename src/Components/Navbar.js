@@ -49,7 +49,7 @@ function Navbar ({config})
                                     </div>
                                     <div id="site-navigation" className="site-navigation">
                                         <div className="ttm-header-icons">
-                                            <a href="contact.html" className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-darkgrey">Get Quoted</a>
+                                            <Link to="contact" className="ttm-btn ttm-btn-size-md ttm-btn-shape-rounded ttm-btn-style-border ttm-icon-btn-right ttm-btn-color-darkgrey">Get Quoted</Link>
                                         </div>
                                         <div className="ttm-menu-toggle">
                                             <input type="checkbox" id="menu-toggle-form" />
