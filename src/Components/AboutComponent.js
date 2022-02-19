@@ -25,11 +25,11 @@ function AboutComponent() {
     const retrieveAbout = () => {
     AboutDataService.getAll()
       .then(response => {
-       console.log("tutossssr", response);
-        setAbout(response.data.data);
+       console.log("istabout", response);
+        setAbout(response.data);
 
         setLoading(false);
-        console.log("about", response.data.data);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);
@@ -123,7 +123,7 @@ else
                     </div>
                 </div>
             </div>
-            {/* <!-- row end --> */}
+            
         </div>
     </section>
     );

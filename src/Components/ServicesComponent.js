@@ -17,10 +17,10 @@ function ServicesComponent() {
     ServiceDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setServices(response.data.services);
+        setServices(response.data);
 
         setLoading(false);
-        console.log("about", response.data.services);
+        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

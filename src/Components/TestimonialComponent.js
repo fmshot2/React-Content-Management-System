@@ -14,13 +14,13 @@ function TestimonialComponent() {
     const retrieveTestimonial = () => {
         TestimonialDataService.getAll()
             .then(response => {
-                console.log("tutossssr", response);
-                setTestimonials(response.data.testimony.slice(-3));
+                console.log("testimonies1", response);
+                setTestimonials(response.data.slice(-3));
                 // const lastTwo = cars.slice(-2);
 
 
                 setLoading(false);
-                console.log("about", response.data.testimony);
+                console.log("testimonies2", response.data);
             })
             .catch(e => {
                 console.log(e);

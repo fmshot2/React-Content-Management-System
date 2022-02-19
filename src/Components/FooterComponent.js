@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 
@@ -15,14 +14,10 @@ const FooterComponent = ({config}) => {
                                 <div className="footer-logo">
                                     <img width="210" height="54" className="img-center" src="images/footer-logo.png" alt="footer-logo"></img>
                                     <div>
-                                        {config.details.length > MAX_LENGTH ?
-                                            (
-                                                <p>
-                                                    {`${config.details.substring(0, MAX_LENGTH)}...`}
-                                                </p>
-                                            ) :
-                                            <p>{config.details}</p>
-                                        }
+                                                <div>
+                                                    {config.details ?  `${config.details.substring(0, 135)}...` : ""}
+                                                </div>
+                                            {/* <p>{config.details}</p> */}
                                     </div>
 
                                 {/* <p>{config.details}</p> */}

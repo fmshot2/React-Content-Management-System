@@ -25,7 +25,7 @@ function App() {
     ConfigDataService.getAll()
       .then(response => {
        console.log("tutossssr", response);
-        setConfig(response.data.system_config);
+        setConfig(response.data);
         console.log("about", response.data.system_config);
       })
       .catch(e => {
@@ -46,7 +46,7 @@ function App() {
       <Route exact path="/about" element={<About/>}/>
       <Route exact path="/contact" element={<Contact config={config}/>} />
       <Route exact path="/events" element={<Events/>}/>
-      <Route exact path="/eventdetails" element={<EventDetails/>}/>
+      <Route path="/eventdetails/:id" element={<EventDetails/>}/>
       <Route exact path="/gallery" element={<Gallery/>}/>
     </Routes>
     </div>

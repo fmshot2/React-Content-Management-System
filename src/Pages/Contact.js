@@ -3,7 +3,7 @@ import { Link, } from 'react-router-dom';
 
 function Contact({config}) {
     const [loading, setLoading] = useState(true);
-    const [students, setStudents] = useState([]);
+    const [contact, setContact] = useState([]);
 
     useEffect(() => {
 
