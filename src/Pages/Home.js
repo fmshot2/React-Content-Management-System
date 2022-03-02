@@ -7,6 +7,7 @@ import UpComingComponent from '../Components/UpcomingComponent';
 import GalleryComponent from '../Components/GalleryComponent';
 import PartnersComponent from '../Components/PartnersComponent';
 import TestimonialComponent from '../Components/TestimonialComponent';
+import AddTestimonialComponent from '../Components/AddTestimonial';
 import PreviousComponent from '../Components/PreviousComponent';
 import StatisticsComponent from '../Components/StatisticsComponent';
 
@@ -25,6 +26,8 @@ return (
     <PreviousComponent />
     <StatisticsComponent/>
     <TestimonialComponent />
+    <AddTestimonialComponent />
+
 </div>
 );
 }
