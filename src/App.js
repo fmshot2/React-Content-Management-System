@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {BrowserRouter as Router,  Routes, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
-import Navbar from './Components/Navbar.js';
-import Home from './Pages/Home.js';
-import About from './Pages/About.js';
-import Contact from './Pages/Contact.js';
-import Events from './Pages/Events.js';
-import EventDetails from './Pages/EventDetails.js';
-import Gallery from './Pages/Gallery.js';
+import Navbar from './Components/Navbar';
+import Register from './Components/Register';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
+import Events from './Pages/Events';
+import EventDetails from './Pages/EventDetails';
+import Gallery from './Pages/Gallery';
 import Footer from './Components/FooterComponent';
 import ConfigDataService from "./Services/ConfigService";
 
@@ -44,6 +45,7 @@ function App() {
     <Routes>
     <Route exact path="/" element={<Home/>}/>
       <Route exact path="/about" element={<About/>}/>
+      <Route exact path="/register" element={<Register/>}/>
       <Route exact path="/contact" element={<Contact config={config}/>} />
       <Route exact path="/events" element={<Events/>}/>
       <Route path="/eventdetails/:id" element={<EventDetails/>}/>

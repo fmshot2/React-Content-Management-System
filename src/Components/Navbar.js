@@ -62,6 +62,7 @@ function Navbar ({config})
                                         <nav id="menu" className="menu">
                                             <ul className="dropdown">
                                                <li className="active"><Link to="/">Home</Link></li>
+                                               <li className="active"> <Link to="/upcomingevents">Register For An Event</Link></li>
                                                <li> <Link to="/about">About</Link></li>
                                                <li><Link to="/contact">Contact</Link></li>
                                                <li><Link to="/gallery">Gallery</Link></li>

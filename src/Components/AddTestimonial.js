@@ -29,8 +29,6 @@ const AddTestimonials = () => {
       details: testimonials.details,
       rating: testimonials.rating,
       profession: testimonials.profession,
-
-
     };
 
     TestimonialDataService.create(data)
@@ -45,6 +43,7 @@ const AddTestimonials = () => {
 
         });
         setSubmitted(true);
+        getSubmitted();
         console.log(response.data);
       })
       .catch(e => {
@@ -52,30 +51,21 @@ const AddTestimonials = () => {
       });
   };
 
-  const newTestimonial = () => {
-    setTestimonials(initialTestimonialState);
+  function getSubmitted() {
+    setTimeout(function(){
     setSubmitted(false);
-  };
+}, 7000)
+    // return setSubmitted(true);
+  }
 
    return (
     <div className="submit-form">
-      {submitted ? (
-        <div className="d-flex justify-content-between">
-        <div>
-          <h4>You submitted successfully!</h4>
-          {/* <Button 
-              size='btn-sm'
-              textcolor='white'
-              color='btn-success'
-               text="Add Testimonial"
-                onClick={newTestimonial} /> */}
-        </div>
-                <Link to={'/testimonials'} className="btn btn-warning btn-sm float-end"> Testimonials</Link>
-</div>
-      ) : (
-<div>
-          {/* Button trigger modal  */}
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      {submitted && (
+          <p id="hhh">You submitted successfully!</p>
+      )}
+
+         {/* Button trigger modal  */}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   post Testimonies
 </button>
 
@@ -85,10 +75,10 @@ const AddTestimonials = () => {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <div>
+      <form>
           <div className="form-group">
             <label htmlFor="title">Name</label>
             <input
@@ -104,7 +94,7 @@ const AddTestimonials = () => {
 
           <div className="form-group">
             <label htmlFor="description">Details</label>
-            <input
+            <textarea
               type="text"
               className="form-control"
               id="details"
@@ -141,26 +131,15 @@ const AddTestimonials = () => {
             />
           </div>
 
-      </div>
+      </form>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={saveTestimonial}>Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onClick={saveTestimonial} data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 </div>
-       {/* <div className="d-flex justify-content-between"> 
-           <Button 
-              size='btn-sm'
-              textcolor='white'
-              color='btn-success'
-               text="Submit"
-               onClick={saveTestimonial} />
-             <Link to={'/testimonials'} className="btn btn-warning btn-sm float-end"> Testimonials</Link>
- </div> */}
-        </div>
-      )}
     </div>
   );
 };
