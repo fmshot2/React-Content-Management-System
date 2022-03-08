@@ -76,7 +76,7 @@ else
                             <p>{upcomingevent.details}</p>
                         </div>
                         <a className="ttm-btn btn-inline ttm-btn-size-md ttm-icon-btn-right ttm-btn-color-darkgrey" href={"/eventdetails/" + upcomingevent.id}> View More</a>
-                        <a className="ttm-btn btn-inline ttm-btn-size-md ttm-icon-btn-right ttm-btn-color-darkgrey" href={"/register/" + upcomingevent.id}> Register</a>
+                        <a className="ttm-btn btn-inline ttm-btn-size-md ttm-icon-btn-right ttm-btn-color-darkgrey" href={"login/" + upcomingevent.id}> Attend</a>
                     </div>
                 
                 </div>

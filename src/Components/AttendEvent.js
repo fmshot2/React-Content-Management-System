@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
 
-function RegisterComponent() {
+function AttendEventComponent() {
 <div>
 <div>
   <p>Login to Register for This Event</p>
@@ -92,4 +92,4 @@ function RegisterComponent() {
 
 };
 
-export default RegisterComponent
+export default AttendEventComponent

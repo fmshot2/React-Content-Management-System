@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
 import AboutDataService from "../Services/AboutService";
 
-
-    
-
 function AboutComponent() {
 
     const initialAboutState = {
@@ -15,8 +12,6 @@ function AboutComponent() {
 
     const [loading, setLoading] = useState(true);
     const [about, setAbout] = useState(initialAboutState);
-
-    
 
     useEffect(() => {
     retrieveAbout();

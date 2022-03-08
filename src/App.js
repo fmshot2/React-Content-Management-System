@@ -3,7 +3,7 @@ import {BrowserRouter as Router,  Routes, Route } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar';
-import Register from './Components/Register';
+import AttendEvent from './Components/AttendEvent';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
@@ -12,6 +12,12 @@ import EventDetails from './Pages/EventDetails';
 import Gallery from './Pages/Gallery';
 import Footer from './Components/FooterComponent';
 import ConfigDataService from "./Services/ConfigService";
+import Login from './Pages/AuthPages/Login';
+import Register from './Pages/AuthPages/Register';
+import AddTestimonialComponent from './Components/AddTestimonial';
+import AddTestimonials from './Components/AddTestimonial';
+
+
 
 
 function App() {
@@ -43,13 +49,18 @@ function App() {
     <br /><br /> <br /> <br />
     <div className="">
     <Routes>
-    <Route exact path="/" element={<Home/>}/>
+      <Route exact path="/" element={<Home/>}/>
+      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/register" element={<Register />} />
       <Route exact path="/about" element={<About/>}/>
-      <Route exact path="/register" element={<Register/>}/>
+      <Route exact path="/attendevent" element={<AttendEvent/>}/>
       <Route exact path="/contact" element={<Contact config={config}/>} />
       <Route exact path="/events" element={<Events/>}/>
       <Route path="/eventdetails/:id" element={<EventDetails/>}/>
       <Route exact path="/gallery" element={<Gallery/>}/>
+      <Route exact path="/addtestimonial" element={<AddTestimonials/>}/>
+
+
     </Routes>
     </div>
     <Footer config={config}/> 

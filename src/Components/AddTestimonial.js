@@ -1,10 +1,13 @@
-import React, { useState } from "react";
-// import Button from '../ReUsables/Button'
+import React, { useState, useEffect } from "react";
+import Button from '../Reusables/Button'
 import TestimonialDataService from "../Services/TestimonialService";
-import {Link, } from 'react-router-dom';
+import {Link,useNavigate } from 'react-router-dom';
+import AuthService from "../Services/Auth/AuthService";
+
 
 
 const AddTestimonials = () => {
+  let navigate = useNavigate();
   const initialTestimonialState = {
     id: null,
     name: "",
@@ -17,6 +20,16 @@ const AddTestimonials = () => {
   };
   const [testimonials, setTestimonials] = useState(initialTestimonialState);
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if (!user) {
+      navigate("/login");
+    } else {
+         return
+    }
+
+}, []);
 
   const handleInputChange = event => {
     const { name, value } = event.target;

@@ -1,9 +1,22 @@
-import React from 'react';
+import {React, useEffect, useState} from 'react';
+import AuthService from "../Services/Auth/AuthService";
 import { Link } from 'react-router-dom';
 
 
 function Navbar ({config})
 {
+    const [currentUser, setCurrentUser] = useState(undefined);
+  useEffect(() => {
+    const user = AuthService.getCurrentUser();
+    if (user) {
+      setCurrentUser(user);
+      // setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
+    //   setShowAdminBoard(user.role =="ADM");
+    }
+  }, []);
+  const logOut = () => {
+    AuthService.logout();
+  };
   return(
     <header id="masthead" className="header ttm-header-style-02">
     <div className="ttm-topbar-wrapper ttm-bgcolor-darkgrey ttm-textcolor-white clearfix">
@@ -59,17 +72,40 @@ function Navbar ({config})
                                                 <span className="toggle-block toggle-blocks-3"></span>
                                             </label>
                                         </div>
+
+                                        {currentUser ? (
+                                             <nav id="menu" className="menu">
+                                             <ul className="dropdown">
+                                                <li className="active"><Link to="/">Home</Link></li>
+                                                <li className="active"> <Link to="/upcomingevents">Attend An Event</Link></li>
+                                                <li> <Link to="/about">About</Link></li>
+                                                <li><Link to="/contact">Contact</Link></li>
+                                                <li><Link to="/gallery">Gallery</Link></li>
+                                                <li><Link to="/events">Events</Link></li>
+                                                <li><Link to="/addtestimonial">Post Testimonials</Link></li>
+                                                <li><Link to="/" onClick={logOut}>LogOut</Link></li>
+                                                </ul>
+                                                </nav>
+                                                 ) : (
+
+                                
                                         <nav id="menu" className="menu">
                                             <ul className="dropdown">
                                                <li className="active"><Link to="/">Home</Link></li>
-                                               <li className="active"> <Link to="/upcomingevents">Register For An Event</Link></li>
+                                               <li className="active"> <Link to="/events">Attend An Event</Link></li>
                                                <li> <Link to="/about">About</Link></li>
                                                <li><Link to="/contact">Contact</Link></li>
                                                <li><Link to="/gallery">Gallery</Link></li>
                                                <li><Link to="/events">Events</Link></li>
-                                                
-                                            </ul>
-                                        </nav>
+                                               <li><Link to="/addtestimonial">Post Testimonials</Link></li>
+                                               <li><Link to="/login">Login</Link></li>
+                                               <li><Link to="/register">Signup</Link></li>
+                                  
+          </ul>
+</nav>
+                                                 )}
+
+
                                     </div>
                                 </div>
                             </div>

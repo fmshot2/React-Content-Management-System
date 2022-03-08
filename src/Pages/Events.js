@@ -85,6 +85,7 @@ else
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
                                         <h3><Link to={"/eventdetails/" + upcomingevent.id}>{upcomingevent.title}</Link></h3>
+                                        <h3><Link to={"/login/" + upcomingevent.id}>Atte</Link></h3>
                                     </div>
                                 </div>
                             </div>
