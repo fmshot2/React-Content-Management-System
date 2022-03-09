@@ -76,6 +76,8 @@ const Register = (props) => {
           // props.history.push("/profile");
           navigate("/");
           setSuccessful(true);
+          
+
         },
         (error) => {
           const resMessage =

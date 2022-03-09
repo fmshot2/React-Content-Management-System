@@ -47,7 +47,11 @@ function App() {
     <Navbar config={config}/>
     </div>
     <br /><br /> <br /> <br />
-    <div className="">
+    <br /><br /> <br /> <br />
+    <br /><br /> <br /> <br />
+
+
+    <div className="mt-500px">
     <Routes>
       <Route exact path="/" element={<Home/>}/>
       <Route exact path="/login" element={<Login />} />
