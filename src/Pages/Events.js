@@ -85,7 +85,7 @@ else
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
                                         <h3><Link to={"/eventdetails/" + upcomingevent.id}>{upcomingevent.title}</Link></h3>
-                                        <h3><Link to={"/login/" + upcomingevent.id}>Atte</Link></h3>
+                                        <h3><Link to={"/attendevent/" + upcomingevent.id}>AttendEvent</Link></h3>
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +117,7 @@ else
                                     <div className="featured-title">
                                         {/* <!-- featured-title --> */}
                                         <h3><Link to={"/eventdetails/" + previousevent.id}>{previousevent.title}</Link></h3>
+                                        <h3><Link to={"/attendevent/" + previousevent.id}>AttendEvent</Link></h3>
                                     </div>
                                 </div>
                             </div>
