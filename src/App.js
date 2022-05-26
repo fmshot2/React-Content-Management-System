@@ -7,6 +7,8 @@ import Home from './Pages/Home.js';
 import About from './Pages/About.js';
 import Contact from './Pages/Contact.js';
 import Events from './Pages/Events.js';
+import VolunteerReg from './Pages/Registration/volunteerReg.js';
+import VulcReg from './Pages/Registration/vulcReg.js';
 import EventDetails from './Pages/EventDetails.js';
 import Gallery from './Pages/Gallery.js';
 import Footer from './Components/FooterComponent';
@@ -46,6 +48,8 @@ function App() {
       <Route exact path="/about" element={<About/>}/>
       <Route exact path="/contact" element={<Contact config={config}/>} />
       <Route exact path="/events" element={<Events/>}/>
+      <Route exact path="/vulcreg" element={<VulcReg/>}/>
+      <Route exact path="/volunteerreg" element={<VolunteerReg/>}/>
       <Route path="/eventdetails/:id" element={<EventDetails/>}/>
       <Route exact path="/gallery" element={<Gallery/>}/>
     </Routes>
