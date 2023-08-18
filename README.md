@@ -1,8 +1,29 @@
 # About React Content Management System App
 React Content Management System App is a fully authenticated reacted app with JWT Authentication System.
 
-## Running the Project
- To run, download, unzip, set up your env, and run npm start in the console.
+# Running the Project
+
+## Env Variables:
+
+Add your config variables values in the config.env file in backend/config folder.
+
+## Install Dependencies:
+
+npm i
+
+## Seed Database:
+
+Use the following command to put some dummy products in that database. Run it in the root folder.
+
+npm run seeder
+
+then,
+
+npm run dev 
+or 
+npm run prod
+
+You are good to go!
  
 ## Suggestions
 If you discover a security vulnerability within this app or any of my open source projects, please send an e-mail to Femi Shotola via [femishotolaa@gmail.com](mailto:femishotolaa@gmail.com). All security vulnerabilities will be promptly addressed.
@@ -12,3 +33,4 @@ The Project is an open-sourced software licensed under the [MIT license](https:/
 
 ## Follow
 Follow me on LinkedIn (https://www.linkedin.com/in/femi-shotola), Medium (https://medium.com/@femishotolaa) or on twitter: https://twitter.com/_fmshot for more great open source tools.
+
