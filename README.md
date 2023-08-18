@@ -23,7 +23,7 @@ npm run dev
 or 
 npm run prod
 
-You are good to go!
+And you are good to go!
  
 ## Suggestions
 If you discover a security vulnerability within this app or any of my open source projects, please send an e-mail to Femi Shotola via [femishotolaa@gmail.com](mailto:femishotolaa@gmail.com). All security vulnerabilities will be promptly addressed.
