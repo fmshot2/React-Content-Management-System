@@ -1,6 +1,8 @@
 import React,  { useState, useEffect } from 'react';
 import { Link, } from 'react-router-dom';
 
+import apiSource from "../http-common";
+
 
 import UpcomingDataService from "../Services/UpcomingEventsService";
 
@@ -19,12 +21,10 @@ function UpcomingComponent() {
     const retrieveUpcoming = () => {
     UpcomingDataService.getAll()
       .then(response => {
-       console.log("tutossssr", response);
        upcomingevents.length > 0 && setLength(true);
-        setUpcomingEvents(response.data);
-
+  
+       process.env.REACT_APP_API_SOURCE === 'laravel' ?  setUpcomingEvents(response.data) : setUpcomingEvents(response.data.data);
         setLoading(false);
-        console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

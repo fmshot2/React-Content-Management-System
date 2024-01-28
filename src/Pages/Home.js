@@ -17,12 +17,12 @@ function Home() {
 return (
 <div className="">
     <Slider />
-    <ServicesComponent />
+    {/* <ServicesComponent /> */}
     <AboutComponent />
     <UpComingComponent />
     <GalleryComponent />
     <PartnersComponent />
-    <PreviousComponent />
+    {/* <PreviousComponent /> */}
     <StatisticsComponent/>
     <TestimonialComponent />
 </div>

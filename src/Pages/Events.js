@@ -21,7 +21,7 @@ function Events() {
     const retrieveUpcomingEvent = () => {
         UpcomingEventService.getAll()
       .then(response => {
-       console.log("events", response);
+       console.log("events in model", response);
         // var date = new Date(Date.parse(DATE));
         response.data.length > 0 && setLength(true);
         setUpcomingEvents(response.data) 

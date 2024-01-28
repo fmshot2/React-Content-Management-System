@@ -18,11 +18,11 @@ function StatisticsComponent() {
     const retrieveStatistics = () => {
     StatisticsDataService.getAll()
       .then(response => {
-       console.log("tutossssr", response);
-        setStatistics(response.data);
+    //    console.log("tutossssr", response);
+       process.env.REACT_APP_API_SOURCE === 'laravel' ?  setStatistics(response.data) : setStatistics(response.data.data);
 
         setLoading(false);
-        console.log("about", response.data);
+        // console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);

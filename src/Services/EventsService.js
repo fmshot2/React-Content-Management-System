@@ -3,31 +3,31 @@ import http from "../http-common";
 
 
 const getAll = () => {
-  return http.get("/event");
+  return http.get("/events");
 };
 
 const get = id => {
-  return http.get(`/event/${id}`);
+  return http.get(`/events/${id}`);
 };
 
 const create = data => {
-  return http.post("/event", data);
+  return http.post("/events", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/event/${id}`, data);
+  return http.put(`/events/${id}`, data);
 };
 
 const remove = id => {
-  return http.delete(`/event/${id}`);
+  return http.delete(`/events/${id}`);
 };
 
 const removeAll = () => {
-  return http.delete(`/event`);
+  return http.delete(`/events`);
 };
 
 const findByTitle = searchTitle => {
-  return http.get(`/event/${searchTitle}`);
+  return http.get(`/events/${searchTitle}`);
 };
 
 

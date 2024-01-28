@@ -1,7 +1,8 @@
 import http from "../http-common";
 
 const getAll = () => {
-  return http.get("/previousevents");
+  // return http.get("/previousevents");
+  return http.get("/events");
 };
 
 const get = id => {

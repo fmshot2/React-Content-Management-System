@@ -18,11 +18,11 @@ function PreviousComponent() {
     const retrievePrevious = () => {
     PreviousDataService.getAll()
       .then(response => {
-       console.log("tutossssr", response);
-        setPreviousEvents(response.data);
+    //    console.log("tutossssr", response);
+       process.env.REACT_APP_API_SOURCE === 'laravel' ?  setPreviousEvents(response.data) :   setPreviousEvents(response.data.data);
 
         setLoading(false);
-        console.log("about", response.data);
+        // console.log("setPreviousEvents",setPreviousEvents);
       })
       .catch(e => {
         console.log(e);

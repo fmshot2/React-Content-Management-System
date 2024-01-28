@@ -14,11 +14,10 @@ function TestimonialComponent() {
     const retrieveTestimonial = () => {
         TestimonialDataService.getAll()
             .then(response => {
-                console.log("testimonies1", response);
-                setTestimonials(response.data.slice(-3));
-                // const lastTwo = cars.slice(-2);
+                // console.log("testimonies1", response);
+                process.env.REACT_APP_API_SOURCE === 'laravel' ? setTestimonials(response.data.slice(-3)) : setTestimonials(response.data.data.slice(-3));
 
-
+                // setTestimonials(response.data.slice(-3));
                 setLoading(false);
                 console.log("testimonies2", response.data);
             })

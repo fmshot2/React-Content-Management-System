@@ -16,11 +16,11 @@ function ServicesComponent() {
     const retrieveService = () => {
     ServiceDataService.getAll()
       .then(response => {
-       console.log("tutossssr", response);
+    //    console.log("tutossssr", response);
         setServices(response.data);
 
         setLoading(false);
-        console.log("about", response.data);
+        // console.log("about", response.data);
       })
       .catch(e => {
         console.log(e);
